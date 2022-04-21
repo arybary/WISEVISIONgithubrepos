@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 
 const UserMenu = ({ userData, fetchUserInfo }) => {
+  const { avatarUrl, name } = userData;
   const [valueId, setValueId] = useState('');
   const handleChange = e => {
     setValueId(e.target.value);
   };
+  console.log(userData);
   const search = event => {
     event.preventDefault();
     fetchUserInfo(valueId);
     setValueId('');
   };
-  const { avatarUrl, name } = userData;
-  const message = name ? `Hello, ${valueId}` : 'Enter your login GITHUB, please';
+
+  const message = name ? `Hello, ${name}` : 'Enter your login GITHUB, please';
   return (
     <div className="menu">
       <span className="menu__greeting">{message}</span>
