@@ -12,7 +12,7 @@ const App = () => {
 
   const fetchUserInfo = async userId => {
     const user = await fetch(`https://api.github.com/users/${userId}`);
-    const userInfo = await user.json();  
+    const userInfo = await user.json();
     if (!user.ok) {
       return alert(userInfo.message);
     }
