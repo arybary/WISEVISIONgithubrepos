@@ -6,7 +6,7 @@ const UserMenu = ({ userData, fetchUserInfo }) => {
   const handleChange = e => {
     setValueId(e.target.value);
   };
-  console.log(userData);
+
   const search = event => {
     event.preventDefault();
     fetchUserInfo(valueId);
